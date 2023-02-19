@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/script.js"></script>
+    <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+    <script>
+        function getComputerChoice(){
+    const choices = ['ROCK','PAPER','SCISSORS'];
+    const randomChoices = Math.floor(Math.random() * 3); // générer un index aléatoire entre 0 et 2 (soit 3)
+    return choices[randomChoices];
+    }   
+    const computerChoice = getComputerChoice();
+    alert(computerChoice);
+    
+        function playRound(playerChoice,computerChoice){
+            if(playerChoice != 'ROCK' && playerChoice != 'PAPER' && playerChoice !=  'SCISSORS' ){
+                alert('Vous devez chosir entre Rock, Paper et Scissors')
+            } else if (
+                (playerChoice === "ROCK" && computerChoice === "SCISSORS") ||
+                (playerChoice === "PAPER" && computerChoice === "ROCK") ||
+                (playerChoice === "SCISSORS" && computerChoice === "PAPER") 
+            ){
+                alert(`Tu gagne ! car ${playerChoice} bat ${computerChoice} `)
+            } else if (
+                (playerChoice === "ROCK" && computerChoice === "PAPER") ||
+                (playerChoice === "PAPER" && computerChoice === "SCISSORS") ||
+                (playerChoice === "SCISSORS" && computerChoice === "ROCK") 
+            ){
+                alert(`Tu perds car ${computerChoice} bat ${playerChoice}`)
+            } else if(playerChoice === computerChoice){
+                alert("Égalité")
+            }
+        } const playerChoice = prompt("Rock ? Paper ? Scissors ?").toUpperCase(); ;
+        console.log(playRound(playerChoice,computerChoice));
+    </script>
+</body>
+</html>
