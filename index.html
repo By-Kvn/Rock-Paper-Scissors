@@ -15,9 +15,6 @@
     const randomChoices = Math.floor(Math.random() * 3); // générer un index aléatoire entre 0 et 2 (soit 3)
     return choices[randomChoices];
     }   
-    const computerChoice = getComputerChoice();
-    alert(computerChoice);
-    
         function playRound(playerChoice,computerChoice){
             if(playerChoice != 'ROCK' && playerChoice != 'PAPER' && playerChoice !=  'SCISSORS' ){
                 alert('Vous devez chosir entre Rock, Paper et Scissors')
@@ -36,7 +33,10 @@
             } else if(playerChoice === computerChoice){
                 alert("Égalité")
             }
-        } const playerChoice = prompt("Rock ? Paper ? Scissors ?").toUpperCase(); ;
+        } 
+        const playerChoice = prompt("Rock ? Paper ? Scissors ?").toUpperCase(); // ".toUpperCase" pour gérer la casse
+        const computerChoice = getComputerChoice(); // Appel de ma fonction "getComputerChoice"
+            alert(`l'ordinateur a choisi ${computerChoice}`);
         console.log(playRound(playerChoice,computerChoice));
     </script>
 </body>
